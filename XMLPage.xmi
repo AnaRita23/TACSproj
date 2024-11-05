@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<amlUI:XMLPage
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:amlUI="https://xmlUI/model"
+    xsi:schemaLocation="https://xmlUI/model XMLUI.ecore"
+    title="homePage"
+    height="400"
+    width="600">
+  <panels type="Grid">
+    <buttons
+        content="Next"
+        command="forward"/>
+    <buttons
+        content="Previous"
+        command="back"/>
+    <comboBoxes
+        selectedItem="tuesday">
+      <items
+          text="monday"/>
+      <items
+          text="tuesday"/>
+    </comboBoxes>
+    <textBlocks
+        text="noodles"/>
+  </panels>
+</amlUI:XMLPage>
