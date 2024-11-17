@@ -1,0 +1,70 @@
+module Source2XMLUI;
+create OUT : xmlUI from IN : Pages;
+
+-- Rule to transform Page to XMLPage
+rule Page2XMLPage {
+    from
+        p : Pages!Page
+    to
+        x : xmlUI!XMLPage (
+            title <- p.title,
+            height <- 800, -- Arbitrary default height, you can customize as needed
+            width <- 600,  -- Arbitrary default width, you can customize as needed
+            panels <- p.containers
+        )
+}
+
+-- Rule to transform Container to XMLPanel
+rule Container2XMLPanel {
+    from
+        c : Pages!Container
+    to
+        x : xmlUI!XMLPanel (
+            type <- c.type,
+            buttons <- c.buttons,
+            comboBoxes <- c.dropdowns,
+            textBlocks <- c.textdisplays
+        )
+}
+
+-- Rule to transform Button to XMLButton
+rule Button2XMLButton {
+    from
+        b : Pages!Button
+    to
+        x : xmlUI!XMLButton (
+            content <- b.text,
+            command <- b.action
+        )
+}
+
+-- Rule to transform Dropdown to XMLComboBox
+rule Dropdown2XMLComboBox {
+    from
+        d : Pages!Dropdown
+    to
+        x : xmlUI!XMLComboBox (
+            selectedItem <- d.selectedItem,
+            items <- d.items
+        )
+}
+
+-- Rule to transform Item to Item
+rule Item2Item {
+    from
+        i : Pages!Item
+    to
+        x : xmlUI!Item (
+            text <- i.text
+        )
+}
+
+-- Rule to transform TextDisplay to XMLTextBlock
+rule TextDisplay2XMLTextBlock {
+    from
+        t : Pages!TextDisplay
+    to
+        x : xmlUI!XMLTextBlock (
+            text <- t.content
+        )
+}

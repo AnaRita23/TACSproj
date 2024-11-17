@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:pages="http://example.com/pages" xmi:version="2.0">
+    <pages:Page title="Main Page">
+        <pages:containers type="StackPanel">
+            <pages:buttons text="Submit" action="submitForm" />
+            <pages:buttons text="Cancel" action="cancelForm" />
+            <pages:dropdowns selectedItem="Option1">
+                <pages:items text="Option1" />
+                <pages:items text="Option2" />
+                <pages:items text="Option3" />
+            </pages:dropdowns>
+            <pages:textdisplays content="Welcome to the main page" />
+        </pages:containers>
+        <pages:containers type="Grid">
+            <pages:buttons text="Save" action="saveData" />
+            <pages:textdisplays content="This is the grid container" />
+        </pages:containers>
+    </pages:Page>
+</xmi:XMI>
