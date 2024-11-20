@@ -1,0 +1,72 @@
+module Source2Target;
+create OUT : XMLUI from IN : Source;
+
+-- Rule to transform Page to XMLPage
+rule Page2XMLPage {
+    from
+        p : Source!Page
+    to
+        x : XMLUI!XMLPage (
+            title <- p.title,
+            height <- 500,  -- Default height
+            width <- 500,   -- Default width
+            panels <- p.containers  -- Map containers to panels
+        )
+}
+
+-- Rule to transform Container to XMLPanel
+rule Container2XMLPanel {
+    from
+        c : Source!Container
+    to
+        x : XMLUI!XMLPanel (
+            id <- c.id,
+            type <- c.type,
+            buttons <- c.buttons,
+            comboBoxes <- c.dropdowns,
+            textBlocks <- c.textDisplays,
+            panels <- c.containers  -- This is the recursive mapping for sub-containers
+        )
+}
+
+-- Rule to transform Button to XMLButton
+rule Button2XMLButton {
+    from
+        b : Source!Button
+    to
+        x : XMLUI!XMLButton (
+            content <- b.text,
+            command <- b.action
+        )
+}
+
+-- Rule to transform Dropdown to XMLComboBox
+rule Dropdown2XMLComboBox {
+    from
+        d : Source!Dropdown
+    to
+        x : XMLUI!XMLComboBox (
+            selectedItem <- d.selectedItem,
+            items <- d.items  -- Ensure items are correctly mapped
+        )
+}
+
+-- Rule to transform Item to Item
+rule Item2Item {
+    from
+        i : Source!Item
+    to
+        x : XMLUI!Item (
+            text <- i.text
+        )
+}
+
+-- Rule to transform TextDisplay to XMLTextBlock
+rule TextDisplay2XMLTextBlock {
+    from
+        t : Source!TextDisplay
+    to
+        x : XMLUI!XMLTextBlock (
+            text <- t.content
+        )
+}

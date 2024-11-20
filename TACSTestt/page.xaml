@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TACS:XMLPage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TACS="http://TACS" 
+    title="page" 
+    height="500" 
+    width="500">
+    
+    <panels>
+        <TACS:XMLPanel id="0" type="Grid">
+            <buttons>
+                <TACS:XMLButton content="Next" command="next"/>
+                <TACS:XMLButton content="Previous" command="previous"/>
+            </buttons>
+        
+            <comboBoxes>
+                <TACS:XMLComboBox selectedItem="random_text_1">
+                    <items>
+                        <TACS:Item text="random_text_1"/>
+                        <TACS:Item text="random_text_2"/>
+                    </items>
+                </TACS:XMLComboBox>
+            </comboBoxes>
+        
+            <textBlocks>
+                <TACS:XMLTextBlock text="random_text_3"/>
+            </textBlocks>
+        
+        </TACS:XMLPanel>
+        <TACS:XMLPanel id="1" type="StackPanel">
+        
+        
+            <textBlocks>
+                <TACS:XMLTextBlock text="random_text_4"/>
+            </textBlocks>
+        
+        </TACS:XMLPanel>
+    </panels>
+</TACS:XMLPage>
