@@ -1,0 +1,1439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="generate" nsURI="TACSTestt::main::generate" startHeaderPosition="29" endHeaderPosition="128">
+    <input>
+      <takesTypesFrom href="http://TACS#/"/>
+    </input>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateXMLPage" visibility="Public" main="true">
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;TACS:XMLPage xmi:version=&quot;2.0&quot; xmlns:xmi=&quot;http://www.omg.org/XMI&quot; xmlns:TACS=&quot;http://TACS&quot; &#xA;    title=&quot;"/>
+        <body xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="aPage" referredVariable="/0/generateXMLPage/aPage">
+            <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPage"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://TACS#//XMLPage/title"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot; &#xA;    height=&quot;"/>
+        <body xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="aPage" referredVariable="/0/generateXMLPage/aPage">
+            <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPage"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://TACS#//XMLPage/height"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot; &#xA;    width=&quot;"/>
+        <body xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="aPage" referredVariable="/0/generateXMLPage/aPage">
+            <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPage"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://TACS#//XMLPage/width"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;>&#xA;    &#xA;"/>
+        <body xsi:type="mtl:IfBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="    &lt;panels>&#xA;"/>
+          <body xsi:type="mtl:ForBlock">
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="        "/>
+            <body xsi:type="mtl:TemplateInvocation" definition="/0/generatePanel">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <argument xsi:type="ocl.ecore:VariableExp" name="panel" referredVariable="/0/generateXMLPage/%/%.7/%.1/panel">
+                <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+              </argument>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+            <loopVariable name="panel">
+              <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+            </loopVariable>
+            <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/11/OrderedSet(XMLPanel)">
+              <source xsi:type="ocl.ecore:VariableExp" name="aPage" referredVariable="/0/generateXMLPage/aPage">
+                <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPage"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://TACS#//XMLPage/panels"/>
+            </iterSet>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="    &lt;/panels>&#xA;"/>
+          <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp" eType="/11/OrderedSet(XMLPanel)">
+                <source xsi:type="ocl.ecore:VariableExp" name="aPage" referredVariable="/0/generateXMLPage/aPage">
+                  <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPage"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://TACS#//XMLPage/panels"/>
+              </source>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/isEmpty"/>
+            </source>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/not"/>
+          </ifExpr>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;/TACS:XMLPage>&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/+">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="aPage" referredVariable="/0/generateXMLPage/aPage">
+              <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPage"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://TACS#//XMLPage/title"/>
+          </source>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".xaml">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <parameter name="aPage">
+        <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPage"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="generatePanel" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;TACS:XMLPanel id=&quot;"/>
+      <body xsi:type="ocl.ecore:PropertyCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+        <source xsi:type="ocl.ecore:VariableExp" name="aPanel" referredVariable="/0/generatePanel/aPanel">
+          <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+        </source>
+        <referredProperty xsi:type="ecore:EAttribute" href="http://TACS#//XMLPanel/id"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot; type=&quot;"/>
+      <body xsi:type="ocl.ecore:PropertyCallExp">
+        <eType xsi:type="ecore:EEnum" href="http://TACS#//panelType"/>
+        <source xsi:type="ocl.ecore:VariableExp" name="aPanel" referredVariable="/0/generatePanel/aPanel">
+          <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+        </source>
+        <referredProperty xsi:type="ecore:EAttribute" href="http://TACS#//XMLPanel/type"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;>&#xA;"/>
+      <body xsi:type="mtl:IfBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="    &lt;buttons>&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="        "/>
+          <body xsi:type="mtl:TemplateInvocation" definition="/0/generateButton">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="button" referredVariable="/0/generatePanel/%.5/%.1/button">
+              <eType xsi:type="ecore:EClass" href="http://TACS#//XMLButton"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+          <loopVariable name="button">
+            <eType xsi:type="ecore:EClass" href="http://TACS#//XMLButton"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/11/OrderedSet(XMLButton)">
+            <source xsi:type="ocl.ecore:VariableExp" name="aPanel" referredVariable="/0/generatePanel/aPanel">
+              <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://TACS#//XMLPanel/buttons"/>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="    &lt;/buttons>&#xA;"/>
+        <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp" eType="/11/OrderedSet(XMLButton)">
+              <source xsi:type="ocl.ecore:VariableExp" name="aPanel" referredVariable="/0/generatePanel/aPanel">
+                <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://TACS#//XMLPanel/buttons"/>
+            </source>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/isEmpty"/>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/not"/>
+        </ifExpr>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:IfBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="    &lt;comboBoxes>&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="        "/>
+          <body xsi:type="mtl:TemplateInvocation" definition="/0/generateComboBox">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="comboBox" referredVariable="/0/generatePanel/%.7/%.1/comboBox">
+              <eType xsi:type="ecore:EClass" href="http://TACS#//XMLComboBox"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+          <loopVariable name="comboBox">
+            <eType xsi:type="ecore:EClass" href="http://TACS#//XMLComboBox"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/11/OrderedSet(XMLComboBox)">
+            <source xsi:type="ocl.ecore:VariableExp" name="aPanel" referredVariable="/0/generatePanel/aPanel">
+              <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://TACS#//XMLPanel/comboBoxes"/>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="    &lt;/comboBoxes>&#xA;"/>
+        <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp" eType="/11/OrderedSet(XMLComboBox)">
+              <source xsi:type="ocl.ecore:VariableExp" name="aPanel" referredVariable="/0/generatePanel/aPanel">
+                <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://TACS#//XMLPanel/comboBoxes"/>
+            </source>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/isEmpty"/>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/not"/>
+        </ifExpr>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:IfBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="    &lt;textBlocks>&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="        "/>
+          <body xsi:type="mtl:TemplateInvocation" definition="/0/generateTextBlock">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="textBlock" referredVariable="/0/generatePanel/%.9/%.1/textBlock">
+              <eType xsi:type="ecore:EClass" href="http://TACS#//XMLTextBlock"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+          <loopVariable name="textBlock">
+            <eType xsi:type="ecore:EClass" href="http://TACS#//XMLTextBlock"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/11/OrderedSet(XMLTextBlock)">
+            <source xsi:type="ocl.ecore:VariableExp" name="aPanel" referredVariable="/0/generatePanel/aPanel">
+              <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://TACS#//XMLPanel/textBlocks"/>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="    &lt;/textBlocks>&#xA;"/>
+        <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp" eType="/11/OrderedSet(XMLTextBlock)">
+              <source xsi:type="ocl.ecore:VariableExp" name="aPanel" referredVariable="/0/generatePanel/aPanel">
+                <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://TACS#//XMLPanel/textBlocks"/>
+            </source>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/isEmpty"/>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/not"/>
+        </ifExpr>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:IfBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="    &lt;panels>&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="        "/>
+          <body xsi:type="mtl:TemplateInvocation" definition="/0/generatePanel">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="subPanel" referredVariable="/0/generatePanel/%.11/%.1/subPanel">
+              <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+          <loopVariable name="subPanel">
+            <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/11/OrderedSet(XMLPanel)">
+            <source xsi:type="ocl.ecore:VariableExp" name="aPanel" referredVariable="/0/generatePanel/aPanel">
+              <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://TACS#//XMLPanel/panels"/>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="    &lt;/panels>&#xA;"/>
+        <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp" eType="/11/OrderedSet(XMLPanel)">
+              <source xsi:type="ocl.ecore:VariableExp" name="aPanel" referredVariable="/0/generatePanel/aPanel">
+                <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://TACS#//XMLPanel/panels"/>
+            </source>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/isEmpty"/>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/not"/>
+        </ifExpr>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;/TACS:XMLPanel>"/>
+      <parameter name="aPanel">
+        <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateButton" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;TACS:XMLButton content=&quot;"/>
+      <body xsi:type="ocl.ecore:PropertyCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:VariableExp" name="aButton" referredVariable="/0/generateButton/aButton">
+          <eType xsi:type="ecore:EClass" href="http://TACS#//XMLButton"/>
+        </source>
+        <referredProperty xsi:type="ecore:EAttribute" href="http://TACS#//XMLButton/content"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot; command=&quot;"/>
+      <body xsi:type="ocl.ecore:PropertyCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:VariableExp" name="aButton" referredVariable="/0/generateButton/aButton">
+          <eType xsi:type="ecore:EClass" href="http://TACS#//XMLButton"/>
+        </source>
+        <referredProperty xsi:type="ecore:EAttribute" href="http://TACS#//XMLButton/command"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;/>"/>
+      <parameter name="aButton">
+        <eType xsi:type="ecore:EClass" href="http://TACS#//XMLButton"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateTextBlock" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;TACS:XMLTextBlock text=&quot;"/>
+      <body xsi:type="ocl.ecore:PropertyCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:VariableExp" name="aTextBlock" referredVariable="/0/generateTextBlock/aTextBlock">
+          <eType xsi:type="ecore:EClass" href="http://TACS#//XMLTextBlock"/>
+        </source>
+        <referredProperty xsi:type="ecore:EAttribute" href="http://TACS#//XMLTextBlock/text"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;/>"/>
+      <parameter name="aTextBlock">
+        <eType xsi:type="ecore:EClass" href="http://TACS#//XMLTextBlock"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateComboBox" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;TACS:XMLComboBox selectedItem=&quot;"/>
+      <body xsi:type="ocl.ecore:PropertyCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:VariableExp" name="aComboBox" referredVariable="/0/generateComboBox/aComboBox">
+          <eType xsi:type="ecore:EClass" href="http://TACS#//XMLComboBox"/>
+        </source>
+        <referredProperty xsi:type="ecore:EAttribute" href="http://TACS#//XMLComboBox/selectedItem"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;>&#xA;"/>
+      <body xsi:type="mtl:IfBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="    &lt;items>&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="        &lt;TACS:Item text=&quot;"/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="item" referredVariable="/0/generateComboBox/%.3/%.1/item">
+              <eType xsi:type="ecore:EClass" href="http://TACS#//Item"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://TACS#//Item/text"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;/>&#xA;"/>
+          <loopVariable name="item">
+            <eType xsi:type="ecore:EClass" href="http://TACS#//Item"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/11/OrderedSet(Item)">
+            <source xsi:type="ocl.ecore:VariableExp" name="aComboBox" referredVariable="/0/generateComboBox/aComboBox">
+              <eType xsi:type="ecore:EClass" href="http://TACS#//XMLComboBox"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://TACS#//XMLComboBox/items"/>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="    &lt;/items>&#xA;"/>
+        <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp" eType="/11/OrderedSet(Item)">
+              <source xsi:type="ocl.ecore:VariableExp" name="aComboBox" referredVariable="/0/generateComboBox/aComboBox">
+                <eType xsi:type="ecore:EClass" href="http://TACS#//XMLComboBox"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://TACS#//XMLComboBox/items"/>
+            </source>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/isEmpty"/>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/not"/>
+        </ifExpr>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;/TACS:XMLComboBox>"/>
+      <parameter name="aComboBox">
+        <eType xsi:type="ecore:EClass" href="http://TACS#//XMLComboBox"/>
+      </parameter>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+      <eOperations name="+">
+        <eAnnotations source="MTL non-standard"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="other">
+          <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ecore_EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="generateXMLPage">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateXMLPage"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aPage">
+          <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPage"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generatePanel">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generatePanel"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aPanel">
+          <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generateButton">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateButton"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aButton">
+          <eType xsi:type="ecore:EClass" href="http://TACS#//XMLButton"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generateTextBlock">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateTextBlock"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aTextBlock">
+          <eType xsi:type="ecore:EClass" href="http://TACS#//XMLTextBlock"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generateComboBox">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateComboBox"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aComboBox">
+          <eType xsi:type="ecore:EClass" href="http://TACS#//XMLComboBox"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="XMLUI_XMLPage_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://TACS#//XMLPage"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="XMLUI_XMLPanel_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://TACS#//XMLPanel"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="XMLUI_XMLButton_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://TACS#//XMLButton"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="XMLUI_XMLTextBlock_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://TACS#//XMLTextBlock"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="XMLUI_XMLComboBox_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://TACS#//XMLComboBox"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPage"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPage"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPage"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPage"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPage"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPage"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPage"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(XMLPanel)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(XMLPanel)" instanceClassName="java.util.Set">
+      <elementType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(XMLButton)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://TACS#//XMLButton"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(XMLButton)" instanceClassName="java.util.Set">
+      <elementType xsi:type="ecore:EClass" href="http://TACS#//XMLButton"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(XMLComboBox)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://TACS#//XMLComboBox"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(XMLComboBox)" instanceClassName="java.util.Set">
+      <elementType xsi:type="ecore:EClass" href="http://TACS#//XMLComboBox"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(XMLTextBlock)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://TACS#//XMLTextBlock"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(XMLTextBlock)" instanceClassName="java.util.Set">
+      <elementType xsi:type="ecore:EClass" href="http://TACS#//XMLTextBlock"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Item)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://TACS#//Item"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SetType" instanceClassName="java.util.Set">
+      <elementType xsi:type="ecore:EClass" href="http://TACS#//Item"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPage"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPage"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPage"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLButton"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLButton"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLComboBox"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLComboBox"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLTextBlock"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLTextBlock"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLPanel"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLButton"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLButton"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLButton"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLButton"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLTextBlock"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLTextBlock"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLTextBlock"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLComboBox"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLComboBox"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLComboBox"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLComboBox"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLComboBox"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//Item"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//Item"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://TACS#//XMLComboBox"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/generateXMLPage">
+      <details key="start" value="63"/>
+      <details key="end" value="606"/>
+      <details key="line" value="4"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/generateXMLPage/%">
+      <details key="start" value="131"/>
+      <details key="end" value="594"/>
+      <details key="line" value="6"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/generateXMLPage/%/%">
+      <details key="start" value="178"/>
+      <details key="end" value="321"/>
+      <details key="line" value="7"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/generateXMLPage/%/%.1">
+      <details key="start" value="322"/>
+      <details key="end" value="333"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/generateXMLPage/%/%.1/aPage">
+      <details key="start" value="322"/>
+      <details key="end" value="327"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/generateXMLPage/%/%.2">
+      <details key="start" value="335"/>
+      <details key="end" value="350"/>
+      <details key="line" value="9"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/generateXMLPage/%/%.3">
+      <details key="start" value="351"/>
+      <details key="end" value="363"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/generateXMLPage/%/%.3/aPage">
+      <details key="start" value="351"/>
+      <details key="end" value="356"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/generateXMLPage/%/%.4">
+      <details key="start" value="365"/>
+      <details key="end" value="379"/>
+      <details key="line" value="10"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/generateXMLPage/%/%.5">
+      <details key="start" value="380"/>
+      <details key="end" value="391"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/generateXMLPage/%/%.5/aPage">
+      <details key="start" value="380"/>
+      <details key="end" value="385"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/generateXMLPage/%/%.6">
+      <details key="start" value="393"/>
+      <details key="end" value="401"/>
+      <details key="line" value="11"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/generateXMLPage/%/%.7">
+      <details key="start" value="405"/>
+      <details key="end" value="570"/>
+      <details key="line" value="13"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/generateXMLPage/%/%.7/%">
+      <details key="start" value="440"/>
+      <details key="end" value="453"/>
+      <details key="line" value="14"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/generateXMLPage/%/%.7/%.1">
+      <details key="start" value="461"/>
+      <details key="end" value="546"/>
+      <details key="line" value="15"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/generateXMLPage/%/%.7/%.1/%">
+      <details key="start" value="500"/>
+      <details key="end" value="508"/>
+      <details key="line" value="16"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/generateXMLPage/%/%.7/%.1/%.1">
+      <details key="start" value="509"/>
+      <details key="end" value="529"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/generateXMLPage/%/%.7/%.1/%.1/panel">
+      <details key="start" value="523"/>
+      <details key="end" value="528"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/generateXMLPage/%/%.7/%.1/%.2">
+      <details key="start" value="531"/>
+      <details key="end" value="532"/>
+      <details key="line" value="17"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/generateXMLPage/%/%.7/%.1/panel">
+      <details key="start" value="467"/>
+      <details key="end" value="482"/>
+      <details key="line" value="15"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/generateXMLPage/%/%.7/%.1/%.3">
+      <details key="start" value="485"/>
+      <details key="end" value="497"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/generateXMLPage/%/%.7/%.1/%.3/aPage">
+      <details key="start" value="485"/>
+      <details key="end" value="490"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/generateXMLPage/%/%.7/%.2">
+      <details key="start" value="547"/>
+      <details key="end" value="561"/>
+      <details key="line" value="18"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/generateXMLPage/%/%.7/%.3">
+      <details key="start" value="409"/>
+      <details key="end" value="438"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/generateXMLPage/%/%.7/%.3/%">
+      <details key="start" value="414"/>
+      <details key="end" value="437"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/generateXMLPage/%/%.7/%.3/%/%">
+      <details key="start" value="414"/>
+      <details key="end" value="426"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/generateXMLPage/%/%.7/%.3/%/%/aPage">
+      <details key="start" value="414"/>
+      <details key="end" value="419"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/generateXMLPage/%/%.8">
+      <details key="start" value="571"/>
+      <details key="end" value="587"/>
+      <details key="line" value="20"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/generateXMLPage/%/%.9">
+      <details key="start" value="138"/>
+      <details key="end" value="159"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/generateXMLPage/%/%.9/%">
+      <details key="start" value="138"/>
+      <details key="end" value="149"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/generateXMLPage/%/%.9/%/aPage">
+      <details key="start" value="138"/>
+      <details key="end" value="143"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/generateXMLPage/%/%.9/%.1">
+      <details key="start" value="152"/>
+      <details key="end" value="159"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/generateXMLPage/%/%.10">
+      <details key="start" value="168"/>
+      <details key="end" value="175"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/generateXMLPage/aPage">
+      <details key="start" value="96"/>
+      <details key="end" value="110"/>
+      <details key="line" value="4"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/generatePanel">
+      <details key="start" value="608"/>
+      <details key="end" value="1507"/>
+      <details key="line" value="24"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/generatePanel/%">
+      <details key="start" value="658"/>
+      <details key="end" value="677"/>
+      <details key="line" value="25"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/generatePanel/%.1">
+      <details key="start" value="678"/>
+      <details key="end" value="687"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/generatePanel/%.1/aPanel">
+      <details key="start" value="678"/>
+      <details key="end" value="684"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/generatePanel/%.2">
+      <details key="start" value="689"/>
+      <details key="end" value="697"/>
+      <details key="line" value="25"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/generatePanel/%.3">
+      <details key="start" value="698"/>
+      <details key="end" value="709"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/generatePanel/%.3/aPanel">
+      <details key="start" value="698"/>
+      <details key="end" value="704"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/generatePanel/%.4">
+      <details key="start" value="711"/>
+      <details key="end" value="714"/>
+      <details key="line" value="25"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/generatePanel/%.5">
+      <details key="start" value="718"/>
+      <details key="end" value="893"/>
+      <details key="line" value="26"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/generatePanel/%.5/%">
+      <details key="start" value="755"/>
+      <details key="end" value="769"/>
+      <details key="line" value="27"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/generatePanel/%.5/%.1">
+      <details key="start" value="777"/>
+      <details key="end" value="868"/>
+      <details key="line" value="28"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/generatePanel/%.5/%.1/%">
+      <details key="start" value="820"/>
+      <details key="end" value="828"/>
+      <details key="line" value="29"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/generatePanel/%.5/%.1/%.1">
+      <details key="start" value="829"/>
+      <details key="end" value="851"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/generatePanel/%.5/%.1/%.1/button">
+      <details key="start" value="844"/>
+      <details key="end" value="850"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/generatePanel/%.5/%.1/%.2">
+      <details key="start" value="853"/>
+      <details key="end" value="854"/>
+      <details key="line" value="30"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/generatePanel/%.5/%.1/button">
+      <details key="start" value="783"/>
+      <details key="end" value="800"/>
+      <details key="line" value="28"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/generatePanel/%.5/%.1/%.3">
+      <details key="start" value="803"/>
+      <details key="end" value="817"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/generatePanel/%.5/%.1/%.3/aPanel">
+      <details key="start" value="803"/>
+      <details key="end" value="809"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/generatePanel/%.5/%.2">
+      <details key="start" value="869"/>
+      <details key="end" value="884"/>
+      <details key="line" value="31"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/generatePanel/%.5/%.3">
+      <details key="start" value="722"/>
+      <details key="end" value="753"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/generatePanel/%.5/%.3/%">
+      <details key="start" value="727"/>
+      <details key="end" value="752"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.55" references="/0/generatePanel/%.5/%.3/%/%">
+      <details key="start" value="727"/>
+      <details key="end" value="741"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/generatePanel/%.5/%.3/%/%/aPanel">
+      <details key="start" value="727"/>
+      <details key="end" value="733"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/generatePanel/%.6">
+      <details key="start" value="894"/>
+      <details key="end" value="895"/>
+      <details key="line" value="33"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/generatePanel/%.7">
+      <details key="start" value="899"/>
+      <details key="end" value="1094"/>
+      <details key="line" value="34"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/generatePanel/%.7/%">
+      <details key="start" value="939"/>
+      <details key="end" value="956"/>
+      <details key="line" value="35"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/generatePanel/%.7/%.1">
+      <details key="start" value="964"/>
+      <details key="end" value="1066"/>
+      <details key="line" value="36"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/generatePanel/%.7/%.1/%">
+      <details key="start" value="1014"/>
+      <details key="end" value="1022"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/generatePanel/%.7/%.1/%.1">
+      <details key="start" value="1023"/>
+      <details key="end" value="1049"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.63" references="/0/generatePanel/%.7/%.1/%.1/comboBox">
+      <details key="start" value="1040"/>
+      <details key="end" value="1048"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.64" references="/0/generatePanel/%.7/%.1/%.2">
+      <details key="start" value="1051"/>
+      <details key="end" value="1052"/>
+      <details key="line" value="38"/>
+    </eAnnotations>
+    <eAnnotations source="positions.65" references="/0/generatePanel/%.7/%.1/comboBox">
+      <details key="start" value="970"/>
+      <details key="end" value="991"/>
+      <details key="line" value="36"/>
+    </eAnnotations>
+    <eAnnotations source="positions.66" references="/0/generatePanel/%.7/%.1/%.3">
+      <details key="start" value="994"/>
+      <details key="end" value="1011"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.67" references="/0/generatePanel/%.7/%.1/%.3/aPanel">
+      <details key="start" value="994"/>
+      <details key="end" value="1000"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.68" references="/0/generatePanel/%.7/%.2">
+      <details key="start" value="1067"/>
+      <details key="end" value="1085"/>
+      <details key="line" value="39"/>
+    </eAnnotations>
+    <eAnnotations source="positions.69" references="/0/generatePanel/%.7/%.3">
+      <details key="start" value="903"/>
+      <details key="end" value="937"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.70" references="/0/generatePanel/%.7/%.3/%">
+      <details key="start" value="908"/>
+      <details key="end" value="936"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.71" references="/0/generatePanel/%.7/%.3/%/%">
+      <details key="start" value="908"/>
+      <details key="end" value="925"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.72" references="/0/generatePanel/%.7/%.3/%/%/aPanel">
+      <details key="start" value="908"/>
+      <details key="end" value="914"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.73" references="/0/generatePanel/%.8">
+      <details key="start" value="1095"/>
+      <details key="end" value="1096"/>
+      <details key="line" value="41"/>
+    </eAnnotations>
+    <eAnnotations source="positions.74" references="/0/generatePanel/%.9">
+      <details key="start" value="1100"/>
+      <details key="end" value="1299"/>
+      <details key="line" value="42"/>
+    </eAnnotations>
+    <eAnnotations source="positions.75" references="/0/generatePanel/%.9/%">
+      <details key="start" value="1140"/>
+      <details key="end" value="1157"/>
+      <details key="line" value="43"/>
+    </eAnnotations>
+    <eAnnotations source="positions.76" references="/0/generatePanel/%.9/%.1">
+      <details key="start" value="1165"/>
+      <details key="end" value="1271"/>
+      <details key="line" value="44"/>
+    </eAnnotations>
+    <eAnnotations source="positions.77" references="/0/generatePanel/%.9/%.1/%">
+      <details key="start" value="1217"/>
+      <details key="end" value="1225"/>
+      <details key="line" value="45"/>
+    </eAnnotations>
+    <eAnnotations source="positions.78" references="/0/generatePanel/%.9/%.1/%.1">
+      <details key="start" value="1226"/>
+      <details key="end" value="1254"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.79" references="/0/generatePanel/%.9/%.1/%.1/textBlock">
+      <details key="start" value="1244"/>
+      <details key="end" value="1253"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.80" references="/0/generatePanel/%.9/%.1/%.2">
+      <details key="start" value="1256"/>
+      <details key="end" value="1257"/>
+      <details key="line" value="46"/>
+    </eAnnotations>
+    <eAnnotations source="positions.81" references="/0/generatePanel/%.9/%.1/textBlock">
+      <details key="start" value="1171"/>
+      <details key="end" value="1194"/>
+      <details key="line" value="44"/>
+    </eAnnotations>
+    <eAnnotations source="positions.82" references="/0/generatePanel/%.9/%.1/%.3">
+      <details key="start" value="1197"/>
+      <details key="end" value="1214"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.83" references="/0/generatePanel/%.9/%.1/%.3/aPanel">
+      <details key="start" value="1197"/>
+      <details key="end" value="1203"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.84" references="/0/generatePanel/%.9/%.2">
+      <details key="start" value="1272"/>
+      <details key="end" value="1290"/>
+      <details key="line" value="47"/>
+    </eAnnotations>
+    <eAnnotations source="positions.85" references="/0/generatePanel/%.9/%.3">
+      <details key="start" value="1104"/>
+      <details key="end" value="1138"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.86" references="/0/generatePanel/%.9/%.3/%">
+      <details key="start" value="1109"/>
+      <details key="end" value="1137"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.87" references="/0/generatePanel/%.9/%.3/%/%">
+      <details key="start" value="1109"/>
+      <details key="end" value="1126"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.88" references="/0/generatePanel/%.9/%.3/%/%/aPanel">
+      <details key="start" value="1109"/>
+      <details key="end" value="1115"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.89" references="/0/generatePanel/%.10">
+      <details key="start" value="1300"/>
+      <details key="end" value="1301"/>
+      <details key="line" value="49"/>
+    </eAnnotations>
+    <eAnnotations source="positions.90" references="/0/generatePanel/%.11">
+      <details key="start" value="1305"/>
+      <details key="end" value="1478"/>
+      <details key="line" value="50"/>
+    </eAnnotations>
+    <eAnnotations source="positions.91" references="/0/generatePanel/%.11/%">
+      <details key="start" value="1341"/>
+      <details key="end" value="1354"/>
+      <details key="line" value="51"/>
+    </eAnnotations>
+    <eAnnotations source="positions.92" references="/0/generatePanel/%.11/%.1">
+      <details key="start" value="1362"/>
+      <details key="end" value="1454"/>
+      <details key="line" value="52"/>
+    </eAnnotations>
+    <eAnnotations source="positions.93" references="/0/generatePanel/%.11/%.1/%">
+      <details key="start" value="1405"/>
+      <details key="end" value="1413"/>
+      <details key="line" value="53"/>
+    </eAnnotations>
+    <eAnnotations source="positions.94" references="/0/generatePanel/%.11/%.1/%.1">
+      <details key="start" value="1414"/>
+      <details key="end" value="1437"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.95" references="/0/generatePanel/%.11/%.1/%.1/subPanel">
+      <details key="start" value="1428"/>
+      <details key="end" value="1436"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.96" references="/0/generatePanel/%.11/%.1/%.2">
+      <details key="start" value="1439"/>
+      <details key="end" value="1440"/>
+      <details key="line" value="54"/>
+    </eAnnotations>
+    <eAnnotations source="positions.97" references="/0/generatePanel/%.11/%.1/subPanel">
+      <details key="start" value="1368"/>
+      <details key="end" value="1386"/>
+      <details key="line" value="52"/>
+    </eAnnotations>
+    <eAnnotations source="positions.98" references="/0/generatePanel/%.11/%.1/%.3">
+      <details key="start" value="1389"/>
+      <details key="end" value="1402"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.99" references="/0/generatePanel/%.11/%.1/%.3/aPanel">
+      <details key="start" value="1389"/>
+      <details key="end" value="1395"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.100" references="/0/generatePanel/%.11/%.2">
+      <details key="start" value="1455"/>
+      <details key="end" value="1469"/>
+      <details key="line" value="55"/>
+    </eAnnotations>
+    <eAnnotations source="positions.101" references="/0/generatePanel/%.11/%.3">
+      <details key="start" value="1309"/>
+      <details key="end" value="1339"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.102" references="/0/generatePanel/%.11/%.3/%">
+      <details key="start" value="1314"/>
+      <details key="end" value="1338"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.103" references="/0/generatePanel/%.11/%.3/%/%">
+      <details key="start" value="1314"/>
+      <details key="end" value="1327"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.104" references="/0/generatePanel/%.11/%.3/%/%/aPanel">
+      <details key="start" value="1314"/>
+      <details key="end" value="1320"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.105" references="/0/generatePanel/%.12">
+      <details key="start" value="1479"/>
+      <details key="end" value="1495"/>
+      <details key="line" value="57"/>
+    </eAnnotations>
+    <eAnnotations source="positions.106" references="/0/generatePanel/aPanel">
+      <details key="start" value="639"/>
+      <details key="end" value="655"/>
+      <details key="line" value="24"/>
+    </eAnnotations>
+    <eAnnotations source="positions.107" references="/0/generateButton">
+      <details key="start" value="1509"/>
+      <details key="end" value="1649"/>
+      <details key="line" value="60"/>
+    </eAnnotations>
+    <eAnnotations source="positions.108" references="/0/generateButton/%">
+      <details key="start" value="1562"/>
+      <details key="end" value="1587"/>
+      <details key="line" value="61"/>
+    </eAnnotations>
+    <eAnnotations source="positions.109" references="/0/generateButton/%.1">
+      <details key="start" value="1588"/>
+      <details key="end" value="1603"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.110" references="/0/generateButton/%.1/aButton">
+      <details key="start" value="1588"/>
+      <details key="end" value="1595"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.111" references="/0/generateButton/%.2">
+      <details key="start" value="1605"/>
+      <details key="end" value="1616"/>
+      <details key="line" value="61"/>
+    </eAnnotations>
+    <eAnnotations source="positions.112" references="/0/generateButton/%.3">
+      <details key="start" value="1617"/>
+      <details key="end" value="1632"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.113" references="/0/generateButton/%.3/aButton">
+      <details key="start" value="1617"/>
+      <details key="end" value="1624"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.114" references="/0/generateButton/%.4">
+      <details key="start" value="1634"/>
+      <details key="end" value="1637"/>
+      <details key="line" value="61"/>
+    </eAnnotations>
+    <eAnnotations source="positions.115" references="/0/generateButton/aButton">
+      <details key="start" value="1541"/>
+      <details key="end" value="1559"/>
+      <details key="line" value="60"/>
+    </eAnnotations>
+    <eAnnotations source="positions.116" references="/0/generateTextBlock">
+      <details key="start" value="1651"/>
+      <details key="end" value="1771"/>
+      <details key="line" value="64"/>
+    </eAnnotations>
+    <eAnnotations source="positions.117" references="/0/generateTextBlock/%">
+      <details key="start" value="1713"/>
+      <details key="end" value="1738"/>
+      <details key="line" value="65"/>
+    </eAnnotations>
+    <eAnnotations source="positions.118" references="/0/generateTextBlock/%.1">
+      <details key="start" value="1739"/>
+      <details key="end" value="1754"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.119" references="/0/generateTextBlock/%.1/aTextBlock">
+      <details key="start" value="1739"/>
+      <details key="end" value="1749"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.120" references="/0/generateTextBlock/%.2">
+      <details key="start" value="1756"/>
+      <details key="end" value="1759"/>
+      <details key="line" value="65"/>
+    </eAnnotations>
+    <eAnnotations source="positions.121" references="/0/generateTextBlock/aTextBlock">
+      <details key="start" value="1686"/>
+      <details key="end" value="1710"/>
+      <details key="line" value="64"/>
+    </eAnnotations>
+    <eAnnotations source="positions.122" references="/0/generateComboBox">
+      <details key="start" value="1773"/>
+      <details key="end" value="2101"/>
+      <details key="line" value="68"/>
+    </eAnnotations>
+    <eAnnotations source="positions.123" references="/0/generateComboBox/%">
+      <details key="start" value="1832"/>
+      <details key="end" value="1864"/>
+      <details key="line" value="69"/>
+    </eAnnotations>
+    <eAnnotations source="positions.124" references="/0/generateComboBox/%.1">
+      <details key="start" value="1865"/>
+      <details key="end" value="1887"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.125" references="/0/generateComboBox/%.1/aComboBox">
+      <details key="start" value="1865"/>
+      <details key="end" value="1874"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.126" references="/0/generateComboBox/%.2">
+      <details key="start" value="1889"/>
+      <details key="end" value="1892"/>
+      <details key="line" value="69"/>
+    </eAnnotations>
+    <eAnnotations source="positions.127" references="/0/generateComboBox/%.3">
+      <details key="start" value="1896"/>
+      <details key="end" value="2069"/>
+      <details key="line" value="70"/>
+    </eAnnotations>
+    <eAnnotations source="positions.128" references="/0/generateComboBox/%.3/%">
+      <details key="start" value="1934"/>
+      <details key="end" value="1946"/>
+      <details key="line" value="71"/>
+    </eAnnotations>
+    <eAnnotations source="positions.129" references="/0/generateComboBox/%.3/%.1">
+      <details key="start" value="1954"/>
+      <details key="end" value="2046"/>
+      <details key="line" value="72"/>
+    </eAnnotations>
+    <eAnnotations source="positions.130" references="/0/generateComboBox/%.3/%.1/%">
+      <details key="start" value="1991"/>
+      <details key="end" value="2016"/>
+      <details key="line" value="73"/>
+    </eAnnotations>
+    <eAnnotations source="positions.131" references="/0/generateComboBox/%.3/%.1/%.1">
+      <details key="start" value="2017"/>
+      <details key="end" value="2026"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.132" references="/0/generateComboBox/%.3/%.1/%.1/item">
+      <details key="start" value="2017"/>
+      <details key="end" value="2021"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.133" references="/0/generateComboBox/%.3/%.1/%.2">
+      <details key="start" value="2028"/>
+      <details key="end" value="2032"/>
+      <details key="line" value="73"/>
+    </eAnnotations>
+    <eAnnotations source="positions.134" references="/0/generateComboBox/%.3/%.1/item">
+      <details key="start" value="1960"/>
+      <details key="end" value="1970"/>
+      <details key="line" value="72"/>
+    </eAnnotations>
+    <eAnnotations source="positions.135" references="/0/generateComboBox/%.3/%.1/%.3">
+      <details key="start" value="1973"/>
+      <details key="end" value="1988"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.136" references="/0/generateComboBox/%.3/%.1/%.3/aComboBox">
+      <details key="start" value="1973"/>
+      <details key="end" value="1982"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.137" references="/0/generateComboBox/%.3/%.2">
+      <details key="start" value="2047"/>
+      <details key="end" value="2060"/>
+      <details key="line" value="75"/>
+    </eAnnotations>
+    <eAnnotations source="positions.138" references="/0/generateComboBox/%.3/%.3">
+      <details key="start" value="1900"/>
+      <details key="end" value="1932"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.139" references="/0/generateComboBox/%.3/%.3/%">
+      <details key="start" value="1905"/>
+      <details key="end" value="1931"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.140" references="/0/generateComboBox/%.3/%.3/%/%">
+      <details key="start" value="1905"/>
+      <details key="end" value="1920"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.141" references="/0/generateComboBox/%.3/%.3/%/%/aComboBox">
+      <details key="start" value="1905"/>
+      <details key="end" value="1914"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.142" references="/0/generateComboBox/%.4">
+      <details key="start" value="2070"/>
+      <details key="end" value="2089"/>
+      <details key="line" value="77"/>
+    </eAnnotations>
+    <eAnnotations source="positions.143" references="/0/generateComboBox/aComboBox">
+      <details key="start" value="1807"/>
+      <details key="end" value="1829"/>
+      <details key="line" value="68"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

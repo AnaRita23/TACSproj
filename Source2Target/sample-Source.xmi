@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TACS:Page xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:TACS="http://TACS"
+    xsi:schemaLocation="http://TACS Source.ecore"
+    title="page">
+  <containers>
+    <buttons
+        text="Next"
+        action="next"/>
+    <textDisplays
+        content="random_text_4"/>
+  </containers>
+</TACS:Page>

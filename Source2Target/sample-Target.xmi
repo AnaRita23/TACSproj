@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<XMLUI:XMLPage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:XMLUI="http://Source2Target" title="page" height="500" width="500">
+  <panels>
+    <buttons content="Next" command="next"/>
+    <textBlocks text="random_text_4"/>
+  </panels>
+</XMLUI:XMLPage>

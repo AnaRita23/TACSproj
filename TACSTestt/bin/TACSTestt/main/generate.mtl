@@ -1,0 +1,78 @@
+[comment encoding = UTF-8 /]
+[module generate('http://TACS')]
+
+[template public generateXMLPage(aPage: XMLPage)]
+[comment @main /]
+[file (aPage.title + '.xaml', false, 'UTF-8')]
+<?xml version="1.0" encoding="UTF-8"?>
+<TACS:XMLPage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TACS="http://TACS" 
+    title="[aPage.title/]" 
+    height="[aPage.height/]" 
+    width="[aPage.width/]">
+    
+    [if (not aPage.panels->isEmpty())]
+    <panels>
+        [for (panel: XMLPanel | aPage.panels)]
+        [generatePanel(panel)/]
+        [/for]
+    </panels>
+    [/if]
+</TACS:XMLPage>
+[/file]
+[/template]
+
+[template public generatePanel(aPanel: XMLPanel)]
+<TACS:XMLPanel id="[aPanel.id/]" type="[aPanel.type/]">
+    [if (not aPanel.buttons->isEmpty())]
+    <buttons>
+        [for (button: XMLButton | aPanel.buttons)]
+        [generateButton(button)/]
+        [/for]
+    </buttons>
+    [/if]
+
+    [if (not aPanel.comboBoxes->isEmpty())]
+    <comboBoxes>
+        [for (comboBox: XMLComboBox | aPanel.comboBoxes)]
+        [generateComboBox(comboBox)/]
+        [/for]
+    </comboBoxes>
+    [/if]
+
+    [if (not aPanel.textBlocks->isEmpty())]
+    <textBlocks>
+        [for (textBlock: XMLTextBlock | aPanel.textBlocks)]
+        [generateTextBlock(textBlock)/]
+        [/for]
+    </textBlocks>
+    [/if]
+
+    [if (not aPanel.panels->isEmpty())]
+    <panels>
+        [for (subPanel: XMLPanel | aPanel.panels)]
+        [generatePanel(subPanel)/]
+        [/for]
+    </panels>
+    [/if]
+</TACS:XMLPanel>
+[/template]
+
+[template public generateButton(aButton: XMLButton)]
+<TACS:XMLButton content="[aButton.content/]" command="[aButton.command/]"/>
+[/template]
+
+[template public generateTextBlock(aTextBlock: XMLTextBlock)]
+<TACS:XMLTextBlock text="[aTextBlock.text/]"/>
+[/template]
+
+[template public generateComboBox(aComboBox: XMLComboBox)]
+<TACS:XMLComboBox selectedItem="[aComboBox.selectedItem/]">
+    [if (not aComboBox.items->isEmpty())]
+    <items>
+        [for (item: Item | aComboBox.items)]
+        <TACS:Item text="[item.text/]"/>
+        [/for]
+    </items>
+    [/if]
+</TACS:XMLComboBox>
+[/template]
